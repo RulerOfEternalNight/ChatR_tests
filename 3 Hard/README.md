@@ -6,4 +6,6 @@ Create an R package that depends on ellmer and provides a function that takes th
 
 
 ![](../_res/hard1.png)
+
+
 ![](../_res/hard2.png)
