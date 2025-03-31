@@ -24,8 +24,60 @@ PS C:\Users\tonyw\Desktop\Projects\R\GRP> ollama run llama3.2:3b-instruct-q4_K_M
 ### Output
 
 <details>
-  <summary><i>Wow, so fancy</i></summary>
-  <b>WOW, SO BOLD</b>
+  <summary><i>Response</i></summary>
+  <br>
+To register a native C function in an R package, you can use the `R_ext` module. Here is an example of how to create and register a simple C function:
+
+1. Create a new file named `R_ext.R` in your R package directory.
+
+2. Add the following code to this file:
+
+```r
+#' @export
+extern "C" {
+  int add(int x, int y);
+}
+```
+
+This is telling R that the `add` function should be exported as a C function and can be accessed from R.
+
+3. Create a new file named `R_add.R` (or any other name you prefer) in your R package directory.
+
+4. Add the following code to this file:
+
+```r
+#' @export
+#' @import R_ext
+add <- function(x, y) {
+  return(x + y)
+}
+```
+
+This is telling R that there is a new function named `add` and that it should be imported from the `R_ext` module.
+
+5. Compile your package using `R CMD SHADOW`.
+
+6. You can now call the native C function in your R code:
+
+```r
+library(my_package)
+result <- add(2, 3)
+print(result)  # prints 5
+```
+
+Note: The `@import R_ext` statement is required to import the `add` function from the `R_ext` module. If you want to access a C function that is defined in a different source file (e.g.,         
+`C_file.c`), you can use the following syntax:
+
+```r
+#' @export
+extern "C" {
+  int add2(int x, int y);
+}
+```
+
+In this case, the `add2` function should be defined in a separate C file and compiled with your package.
+
+  
 </details>
 <br>
 
