@@ -1,0 +1,15 @@
+Package: ListFns
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Jegadit", "KingOfMonsters",
+      email = "jegaditsakthisaravanan@gmail.com",
+      role = c("aut", "cre")
+    )
+  )
+Description: R package that depends on ellmer and provides a function that takes the name of a package returns a character vector of functions exported by that package.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
