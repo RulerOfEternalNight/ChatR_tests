@@ -1,6 +1,15 @@
 # Task: Easy
 
-Install the Ollama software, pull the Q4_K_M quantization of `llama3.2:3b-instruct`, and ask it a question that could be answered by reading *Writing R Extensions*.
+Task: Install the Ollama software, pull the Q4_K_M quantization of `llama3.2:3b-instruct`, and ask it a question that could be answered by reading *Writing R Extensions*.
+
+
+**This task write-up involves installing the Ollama software, pulling the Q4_K_M quantization of the llama3.2:3b-instruct model, and querying it with a question based on the content of Writing R Extensions. Two versions are provided:**
+
+**Version 1: Without context from the document, the model answers the question about registering a native C function in an R package using general knowledge.**
+
+**Version 2: Incorporates context from Writing R Extensions by creating a model file with the contents of the manual, enhancing the model's responses. This version answers a question about the use of C code to speed up R functions, providing a detailed explanation with examples and best practices for integrating C with R.**
+
+**Both versions involve pulling and running the model, with the second version offering more context-specific answers.**
 
 ---
 
